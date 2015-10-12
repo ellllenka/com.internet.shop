@@ -29,19 +29,8 @@ public class GoodService {
         return good.getId();
     }
 
-    public void updatePrice(long id, int price){
-        // TODO implements it;
+    public void updateGood(Good good){
+        goodRepository.save(good);
     }
 
-    public void updateName(long id, String name){
-        // TODO implements it;
-    }
-
-    public void updateDescription(long id, String description){
-        // TODO implements it;
-    }
-
-        public void addQuantity(long id, int quantity){
-        // TODO implements it;
-    }
 }
