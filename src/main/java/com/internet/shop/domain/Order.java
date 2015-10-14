@@ -1,9 +1,11 @@
 package com.internet.shop.domain;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 import java.util.LinkedList;
@@ -19,6 +21,7 @@ public class Order {
     private long id;
     private String email;
     private OrderStatusEnum orderStatus = OrderStatusEnum.NEW;
+    @OneToMany // one order - many orderLines
     private List<OrderLine> orderLines = new LinkedList<>();
 
     public Order() {

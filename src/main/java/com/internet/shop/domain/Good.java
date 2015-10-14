@@ -1,14 +1,14 @@
 package com.internet.shop.domain;
-import org.springframework.data.annotation.Id;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by MyUser on 05.10.2015.
  */
 @Entity
 public class Good {
-
-
     @Id
     @GeneratedValue
     private long id;

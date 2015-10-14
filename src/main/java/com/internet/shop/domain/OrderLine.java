@@ -1,9 +1,11 @@
 package com.internet.shop.domain;
 
-import org.springframework.data.annotation.Id;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Created by MyUser on 05.10.2015.
@@ -13,6 +15,8 @@ public class OrderLine {
     @Id
     @GeneratedValue
     private long id;
+    @OneToOne
+    private Good good;
     private int price;
     private int quantity;
 
@@ -38,5 +42,13 @@ public class OrderLine {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Good getGood() {
+        return good;
+    }
+
+    public void setGood(Good good) {
+        this.good = good;
     }
 }

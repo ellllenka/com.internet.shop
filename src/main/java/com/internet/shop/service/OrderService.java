@@ -4,12 +4,14 @@ import com.internet.shop.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by MyUser on 06.10.2015.
  */
+@Service
 public class OrderService {
 
     @Autowired

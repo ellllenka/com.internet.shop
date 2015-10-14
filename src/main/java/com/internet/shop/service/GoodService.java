@@ -5,10 +5,12 @@ import com.internet.shop.domain.GoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by MyUser on 05.10.2015.
  */
+@Service
 public class GoodService {
 
     @Autowired
@@ -29,8 +31,8 @@ public class GoodService {
         return good.getId();
     }
 
-    public void updateGood(Good good){
-        goodRepository.save(good);
+    public Good updateGood(Good good){
+        return goodRepository.save(good);
     }
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class GoodController {
+
     @Autowired
     private GoodService goodService;
 
@@ -24,29 +25,21 @@ public class GoodController {
         return goodService.getGoods(pageable);
     }
 
-    @RequestMapping(value = "/goods", method = RequestMethod.GET)
+    @RequestMapping(value = "/good", method = RequestMethod.GET)
     @ResponseBody
     public Good getGood(long id){
         return goodService.getGood(id);
     }
 
-    @RequestMapping(value = "/goods", method = RequestMethod.POST)
+    @RequestMapping(value = "/good", method = RequestMethod.POST)
     @ResponseBody
     public long addGood(String name, int price, int quantity, String description) {
         return goodService.addGood(name, price, quantity, description);
     }
 
-    @RequestMapping(value = "/goods", method = RequestMethod.PUT)
+    @RequestMapping(value = "/good", method = RequestMethod.PUT)
     @ResponseBody
-    public void updateGood(Good good){
-        goodService.updateGood(good);
+    public Good updateGood(Good good){
+        return goodService.updateGood(good);
     }
-
-
-
-
-
-
-
-
 }
